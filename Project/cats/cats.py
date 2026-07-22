@@ -66,6 +66,17 @@ def about(subject):
 
     # BEGIN PROBLEM 2
     "*** YOUR CODE HERE ***"
+    def about_words(p):
+        # 转成一个list
+        word_list = split(remove_punctuation(p).lower())
+        # BEGIN TEST
+        match_words_boolean = [w in subject for w in word_list]
+        match_words =[w for w in word_list if w in subject]
+        print("DEBUG:", match_words) 
+        print("DEBUG:", match_words_boolean) 
+        # END TEST
+        return any(w in subject for w in word_list)
+    return about_words
     # END PROBLEM 2
 
 
