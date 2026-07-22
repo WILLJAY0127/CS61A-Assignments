@@ -1,5 +1,6 @@
 """Typing test implementation"""
 
+from math import e
 from site import ENABLE_USER_SITE
 
 from utils import (
@@ -152,6 +153,8 @@ def wpm(typed, elapsed):
     assert elapsed > 0, "Elapsed time must be positive"
     # BEGIN PROBLEM 4
     "*** YOUR CODE HERE ***"
+    words = len(typed) / 5
+    return words / (elapsed / 60)
     # END PROBLEM 4
 
 
