@@ -1,5 +1,7 @@
 """Typing test implementation"""
 
+from site import ENABLE_USER_SITE
+
 from utils import (
     lower,
     split,
@@ -38,6 +40,12 @@ def pick(paragraphs, select, k):
     """
     # BEGIN PROBLEM 1
     "*** YOUR CODE HERE ***"
+    candidates  = [p for p in paragraphs if select(p)]
+
+    if k < len(candidates):
+        return candidates[k]
+    else:
+        return ''
     # END PROBLEM 1
 
 
