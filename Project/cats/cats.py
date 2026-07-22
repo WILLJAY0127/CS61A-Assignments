@@ -107,6 +107,33 @@ def accuracy(typed, source):
     source_words = split(source)
     # BEGIN PROBLEM 3
     "*** YOUR CODE HERE ***"
+    if len(typed_words) == 0:
+        return 100.0 if len(source_words) == 0 else 0.0
+    if len(source_words) == 0:
+        return 0.0
+
+    
+    # BEGIN TEST
+    debug = list(zip(typed_words,source_words))
+    print("DEBUG:", debug)
+    debug = [[s , t] for s,t in zip(typed_words,source_words)]
+    print("DEBUG:", debug)
+    debug = list(s == t for s,t in zip(typed_words,source_words))
+    print("DEBUG:", debug)
+    debug = [s == t for s,t in zip(typed_words,source_words)]
+    print("DEBUG:", debug)
+    debug = sum(s == t for s,t in zip(typed_words,source_words))
+    print("DEBUG:", debug)
+    # END TEST   
+    
+    correct_count = 0 
+    min_length = min(len(typed_words),len(source_words))
+    for i in range(min_length):
+        if (typed_words[i] == source_words[i]):
+            correct_count += 1
+    return correct_count / len(typed_words) * 100
+
+
     # END PROBLEM 3
 
 
